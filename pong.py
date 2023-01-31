@@ -40,7 +40,18 @@ ball.penup()
 ball.goto(0, 0)
 # ball movement on y and x axis 2 pixels
 ball.dx = 0.1
-ball.dy = 0.1
+ball.dy = -0.1
+
+# Pen
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Player 1: 0  Player 2: 0", align="center",
+          font=("Courier", 24, "normal"))
+
 
 # functions will have code for moving paddles up and down **********************************
 
