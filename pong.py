@@ -18,7 +18,7 @@ player_two_score = 0
 # Paddle and ball section ****************************************************************
 # paddle 1
 paddle_one = turtle.Turtle()
-paddle_one.speed(0)  # sets speed of paddle to max amount of available
+paddle_one.speed("fastest")  # sets speed of paddle to max amount of available
 paddle_one.shape("square")  # gives paddle its shape
 paddle_one.color("white")
 # streches width of the paddle
@@ -28,7 +28,7 @@ paddle_one.goto(-350, 0)  # set position of paddle
 
 # paddle 2
 paddle_two = turtle.Turtle()
-paddle_two.speed(0)
+paddle_two.speed("fastest")
 paddle_two.shape("square")
 paddle_two.color("white")
 paddle_two.shapesize(stretch_wid=5, stretch_len=1)
