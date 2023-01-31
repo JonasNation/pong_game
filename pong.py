@@ -38,6 +38,9 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
+# ball movement on y and x axis 2 pixels
+ball.dx = 2
+ball.dy = 2
 
 # functions will have code for moving paddles up and down **********************************
 
@@ -85,3 +88,7 @@ game_window.onkeypress(paddle_two_down, "Down")
 while True:
     # ever time the loop runs, the screen will update
     game_window.update()
+
+    # makes ball move
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
