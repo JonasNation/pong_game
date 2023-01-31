@@ -11,6 +11,10 @@ game_window.setup(width=800, height=600)
 # stops window from updating so game can move faster
 game_window.tracer(0)
 
+# Score
+player_one_score = 0
+player_two_score = 0
+
 # Paddle and ball section ****************************************************************
 # paddle 1
 paddle_one = turtle.Turtle()
@@ -113,14 +117,22 @@ while True:
     elif ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-    # left border
+    # right border
     elif ball.xcor() > 390:
         ball.goto(0, 0)
         ball.dx *= -1
-    # right border
+        player_one_score += 1
+        pen.clear()
+        pen.write("Player 1: {0}  Player 2: {1}".format(player_one_score, player_two_score), align="center",
+                  font=("Courier", 24, "normal"))
+    # left border
     elif ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
+        player_two_score += 1
+        pen.clear()
+        pen.write("Player 1: {0}  Player 2: {1}".format(player_one_score, player_two_score), align="center",
+                  font=("Courier", 24, "normal"))
 
     # get ball to bounce off paddle
     # paddle two
