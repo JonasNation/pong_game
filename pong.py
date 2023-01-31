@@ -44,7 +44,7 @@ ball.penup()
 ball.goto(0, 0)
 # ball movement on y and x axis 2 pixels
 ball.dx = 0.1
-ball.dy = -0.1
+ball.dy = 0.1
 
 # Pen
 pen = turtle.Turtle()
@@ -119,7 +119,8 @@ while True:
         ball.dy *= -1
     # right border
     elif ball.xcor() > 390:
-        ball.goto(0, 0)
+        # ball.goto(0, 0)
+        ball.setx(390)
         ball.dx *= -1
         player_one_score += 1
         pen.clear()
@@ -127,7 +128,8 @@ while True:
                   font=("Courier", 24, "normal"))
     # left border
     elif ball.xcor() < -390:
-        ball.goto(0, 0)
+        # ball.goto(0, 0)
+        ball.setx(-390)
         ball.dx *= -1
         player_two_score += 1
         pen.clear()
