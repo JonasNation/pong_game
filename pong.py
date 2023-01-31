@@ -39,8 +39,8 @@ ball.color("white")
 ball.penup()
 ball.goto(0, 0)
 # ball movement on y and x axis 2 pixels
-ball.dx = 2
-ball.dy = 2
+ball.dx = 0.1
+ball.dy = 0.1
 
 # functions will have code for moving paddles up and down **********************************
 
@@ -92,3 +92,21 @@ while True:
     # makes ball move
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    # border check - once ball get to a certain point it will bounce off, by compairing the ball y coordinates
+    # top border
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1  # reverses the direction of ball
+    # bottom border
+    elif ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+    # left border
+    elif ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+    # right border
+    elif ball.xcor() < -390:
+        ball.goto(0, 0)
+        ball.dx *= -1
